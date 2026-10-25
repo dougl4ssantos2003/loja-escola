@@ -1,10 +1,14 @@
 /* CSS propositalmente simples. A ideia é que os estudantes o evoluam. */
 :root {
-  --surface: #f6f4ef;
-  --ink: #222;
-  --muted: #666;
-  --border: #d9d5cc;
-  --accent-soft: #e8ff7a;
+  --surface: #FFF3E8;
+  --ink: #2B1B35;
+  --muted: #706477;
+  --border: #E8D8E9;
+  --accent-soft: #FFF0B3;
+
+  --weasley-orange: #E87522;
+  --weasley-purple: #672A91;
+  --weasley-gold: #F6D365;
 }
 
 body { color: var(--ink); background: #fff; }
@@ -31,6 +35,29 @@ body { color: var(--ink); background: #fff; }
 .order-data dt { font-size: .85rem; color: var(--muted); }
 .order-data dd { margin: .25rem 0 0; font-weight: 700; }
 .site-footer { margin-top: 4rem; background: #171717; color: #fff; }
+
+/* Identidade visual Gemialidades Weasley */
+
+body {
+  color: var(--ink);
+  background: var(--surface);
+}
+
+.site-header {
+  background: var(--weasley-purple);
+  border-bottom: 4px solid var(--weasley-orange);
+}
+
+.site-header .navbar-brand,
+.site-header .nav-link {
+  color: #fff;
+}
+
+.site-header .nav-link:hover,
+.site-header .nav-link:focus {
+  color: var(--weasley-gold);
+}
+
 
 /* TODO didático:
    - melhorar estados de hover/focus;
