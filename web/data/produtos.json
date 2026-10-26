@@ -1,0 +1,57 @@
+
+[
+  {
+    "id": 1,
+    "nome": "Feijõezinhos Surpresa do Caos",
+    "categoria": "Doces mágicos",
+    "preco": 19.90,
+    "emoji": "🍬",
+    "regraCriativa": "Cabe no bolso",
+    "descricao": "Doces imprevisíveis para transformar qualquer momento em uma surpresa mágica."
+  },
+  {
+    "id": 2,
+    "nome": "Orelhas Extensíveis",
+    "categoria": "Invenções mágicas",
+    "preco": 39.90,
+    "emoji": "👂",
+    "regraCriativa": "Uso inusitado",
+    "descricao": "Uma invenção divertida para ouvir conversas a distância."
+  },
+  {
+    "id": 3,
+    "nome": "Pântano Portátil",
+    "categoria": "Travessuras",
+    "preco": 89.90,
+    "emoji": "🪄",
+    "regraCriativa": "Não cabe no avião",
+    "descricao": "Uma travessura mágica que transforma qualquer ambiente em um pântano."
+  },
+  {
+    "id": 4,
+    "nome": "Mini-Pufes Mágicos",
+    "categoria": "Criaturas mágicas",
+    "preco": 49.90,
+    "emoji": "🐾",
+    "regraCriativa": "Cabe em uma formiga",
+    "descricao": "Criaturinhas encantadas que ficam minúsculas quando recebem um toque de magia."
+  },
+  {
+    "id": 5,
+    "nome": "Doces Capilares Instantâneos",
+    "categoria": "Doces mágicos",
+    "preco": 24.90,
+    "emoji": "🍭",
+    "regraCriativa": "Uso único",
+    "descricao": "Doces que mudam temporariamente a aparência dos cabelos."
+  },
+  {
+    "id": 6,
+    "nome": "Zonzo-Zum",
+    "categoria": "Travessuras",
+    "preco": 34.90,
+    "emoji": "💥",
+    "regraCriativa": "Começa com Z",
+    "descricao": "Uma nuvem mágica de fumaça colorida e confetes para surpreender os amigos."
+  }
+]
