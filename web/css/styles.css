@@ -15,7 +15,37 @@ body { color: var(--ink); background: #fff; }
 .skip-link { position: absolute; top: -60px; left: 1rem; z-index: 1000; padding: .75rem 1rem; background: #000; color: #fff; }
 .skip-link:focus { top: 1rem; }
 .site-header { border-bottom: 1px solid var(--border); background: #fff; }
-.hero { background: var(--surface); border-bottom: 1px solid var(--border); }
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding-top: 6rem !important;
+  padding-bottom: 6rem !important;
+  color: #fff;
+  background:
+    linear-gradient(
+      rgba(20, 8, 32, 0.48),
+      rgba(20, 8, 32, 0.72)
+    ),
+    url("../images/fundo-magico.png") center 48% / cover no-repeat;
+  border-bottom: 3px solid var(--weasley-orange);
+}
+
+.hero h1 {
+  color: var(--weasley-gold);
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.7);
+}
+
+.hero p {
+  color: #fff;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+.hero .eyebrow {
+  color: var(--weasley-gold);
+}
+
 .eyebrow { font-size: .85rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
 .product-filter { width: min(100%, 320px); }
 .product-card { border: 1px solid var(--border); border-radius: 8px; box-shadow: none; }
@@ -56,6 +86,191 @@ body {
 .site-header .nav-link:hover,
 .site-header .nav-link:focus {
   color: var(--weasley-gold);
+}
+
+.btn-weasley {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 26px;
+  border: 2px solid var(--weasley-orange);
+  border-radius: 8px;
+  background: var(--weasley-orange);
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-weasley:hover {
+  background: #C95712;
+  border-color: #C95712;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.btn-weasley:focus-visible {
+  outline: 3px solid var(--weasley-gold);
+  outline-offset: 4px;
+}
+
+/* Apresentação mágica da Gemialidades Weasley */
+.hero .container {
+  max-width: 1000px;
+  text-align: center;
+}
+
+.hero h1 {
+  max-width: 850px;
+  margin: 0 auto 1.5rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  line-height: 1.15;
+}
+
+.hero .lead {
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: 1.15rem;
+  line-height: 1.8;
+}
+
+.hero .eyebrow {
+  margin-bottom: 1rem !important;
+  letter-spacing: 0.12em;
+}
+
+/* Header */
+
+
+.site-header {
+  position: relative;
+  z-index: 10;
+  background: #291438;
+  border-bottom: 3px solid var(--weasley-gold);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+}
+
+.site-header .navbar {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.site-header .navbar-brand {
+  color: var(--weasley-gold);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.35rem;
+  letter-spacing: 0.02em;
+}
+
+.site-header .nav-link {
+  color: #fff;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.site-header .nav-link:hover,
+.site-header .nav-link:focus {
+  color: var(--weasley-gold);
+}
+
+.site-header .navbar-toggler {
+  border-color: var(--weasley-gold);
+}
+
+.site-header .navbar-toggler:focus {
+  box-shadow: 0 0 0 0.2rem rgba(246, 211, 101, 0.35);
+}
+
+.site-header .navbar-toggler-icon {
+  filter: brightness(0) invert(1);
+}
+
+/* Cards*/
+
+/* Cards mágicos da Gemialidades Weasley */
+.product-card {
+  height: 100%;
+  overflow: hidden;
+  background: #291438;
+  color: #fff3e8;
+  border: 2px solid #8d5a24;
+  border-radius: 14px;
+  box-shadow: 0 5px 15px rgba(20, 8, 32, 0.2);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+/* Efeito mágico ao passar o mouse */
+.product-card:hover {
+  transform: translateY(-6px);
+  border-color: #f6d365;
+  box-shadow: 0 10px 25px rgba(103, 42, 145, 0.35);
+}
+
+/* Área da ilustração do produto */
+.product-illustration {
+  background: linear-gradient(135deg, #402052, #20102d);
+  border: none;
+  border-bottom: 1px solid #8d5a24;
+}
+
+/* Títulos dos produtos */
+.product-card .card-title {
+  color: #f6d365;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+}
+
+/* Descrição dos produtos */
+.product-card .card-text {
+  color: #f3e8f7;
+  line-height: 1.6;
+}
+
+/* Preços */
+.product-card .price {
+  color: #f6d365;
+  font-size: 1.3rem;
+}
+
+/* Acessibilidade: respeitar preferência por menos movimento */
+@media (prefers-reduced-motion: reduce) {
+  .product-card {
+    transition: none;
+  }
+
+  .product-card:hover {
+    transform: none;
+  }
+}
+
+/* Botões dos cards */
+.product-card .btn {
+  background: #e87522;
+  border: 2px solid #e87522;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 700;
+  padding: 0.65rem 1rem;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.product-card .btn:hover {
+  background: #c95712;
+  border-color: #f6d365;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.product-card .btn:focus-visible {
+  outline: 3px solid #f6d365;
+  outline-offset: 3px;
 }
 
 
