@@ -3,6 +3,10 @@ const listaProdutos = document.querySelector("#listaProdutos");
 const inputFiltro = document.querySelector("#filtroProduto");
 const mensagemFiltro = document.querySelector("#mensagemFiltro");
 
+const filtroCategoria = document.querySelector("#filtroCategoria");
+const filtroRegra = document.querySelector("#filtroRegra");
+const ordenacaoProdutos = document.querySelector("#ordenacaoProdutos");
+
 let produtos = [];
 
 async function carregarProdutos() {
@@ -15,7 +19,10 @@ async function carregarProdutos() {
 
     produtos = await resposta.json();
 
-    mostrarProdutos(produtos);
+    preencherOpcoes(filtroCategoria, "categoria");
+    preencherOpcoes(filtroRegra, "regraCriativa");
+
+    aplicarFiltros();
   } catch (erro) {
     console.error("Erro ao carregar produtos:", erro);
 
@@ -25,6 +32,19 @@ async function carregarProdutos() {
       </p>
     `;
   }
+}
+
+function preencherOpcoes(select, propriedade) {
+  const valores = [...new Set(
+    produtos.map((produto) => produto[propriedade])
+  )].sort((a, b) => a.localeCompare(b, "pt-BR"));
+
+  valores.forEach((valor) => {
+    const opcao = document.createElement("option");
+    opcao.value = valor;
+    opcao.textContent = valor;
+    select.appendChild(opcao);
+  });
 }
 
 function mostrarProdutos(lista) {
@@ -37,8 +57,9 @@ function mostrarProdutos(lista) {
 
     card.innerHTML = `
       <div class="card h-100 product-card">
-        <div class="product-illustration" aria-hidden="true">
-          ${produto.emoji}
+      
+        <div class="product-illustration">
+          <img src="${produto.imagem}" alt="${produto.nome}" loading="lazy">
         </div>
 
         <div class="card-body">
@@ -54,15 +75,12 @@ function mostrarProdutos(lista) {
 
           <p class="price">
             ${produto.preco.toLocaleString("pt-BR", {
-              style: "currency",
-              currency: "BRL"
-            })}
+      style: "currency",
+      currency: "BRL"
+    })}
           </p>
 
-          <a
-            class="btn"
-            href="produto.html?id=${produto.id}"
-          >
+          <a class="btn" href="produto.html?id=${produto.id}">
             Ver detalhes
           </a>
         </div>
@@ -72,32 +90,61 @@ function mostrarProdutos(lista) {
     listaProdutos.appendChild(card);
   });
 
-  if (inputFiltro.value.trim()) {
-    mensagemFiltro.textContent =
-      `${lista.length} produto(s) encontrado(s).`;
-  } else {
-    mensagemFiltro.textContent = "";
-  }
+  mensagemFiltro.textContent = lista.length === 0
+    ? "Nenhum produto encontrado."
+    : `${lista.length} produto(s) encontrado(s).`;
 }
 
-function filtrarProdutos() {
+function aplicarFiltros() {
   const termo = inputFiltro.value.trim().toLowerCase();
+  const categoria = filtroCategoria.value;
+  const regra = filtroRegra.value;
 
-  const produtosFiltrados = produtos.filter((produto) => {
-    return (
+  let resultado = produtos.filter((produto) => {
+    const correspondePesquisa =
       produto.nome.toLowerCase().includes(termo) ||
       produto.categoria.toLowerCase().includes(termo) ||
-      produto.regraCriativa.toLowerCase().includes(termo)
-    );
+      produto.regraCriativa.toLowerCase().includes(termo);
+
+    const correspondeCategoria =
+      !categoria || produto.categoria === categoria;
+
+    const correspondeRegra =
+      !regra || produto.regraCriativa === regra;
+
+    return correspondePesquisa &&
+      correspondeCategoria &&
+      correspondeRegra;
   });
 
-  mostrarProdutos(produtosFiltrados);
+  switch (ordenacaoProdutos.value) {
+    case "nome-asc":
+      resultado.sort((a, b) =>
+        a.nome.localeCompare(b.nome, "pt-BR")
+      );
+      break;
 
-  if (termo && produtosFiltrados.length === 0) {
-    mensagemFiltro.textContent = "Nenhum produto encontrado.";
+    case "nome-desc":
+      resultado.sort((a, b) =>
+        b.nome.localeCompare(a.nome, "pt-BR")
+      );
+      break;
+
+    case "preco-asc":
+      resultado.sort((a, b) => a.preco - b.preco);
+      break;
+
+    case "preco-desc":
+      resultado.sort((a, b) => b.preco - a.preco);
+      break;
   }
+
+  mostrarProdutos(resultado);
 }
 
-inputFiltro.addEventListener("input", filtrarProdutos);
+inputFiltro.addEventListener("input", aplicarFiltros);
+filtroCategoria.addEventListener("change", aplicarFiltros);
+filtroRegra.addEventListener("change", aplicarFiltros);
+ordenacaoProdutos.addEventListener("change", aplicarFiltros);
 
 carregarProdutos();

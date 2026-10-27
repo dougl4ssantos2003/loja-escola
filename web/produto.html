@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,9 +9,10 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
   <a class="skip-link" href="#conteudo">Pular para o conteúdo principal</a>
-  
+
   <div id="header-container"></div>
 
   <main id="conteudo" class="container py-5">
@@ -28,23 +30,29 @@
       <div class="col-lg-6">
         <p class="eyebrow">Acessórios</p>
         <h1>Mochila Horizonte</h1>
-        <p class="lead">Uma mochila compacta para quem carrega notebook, caderno, carregador e mais algumas pequenas histórias.</p>
+        <p class="lead">Uma mochila compacta para quem carrega notebook, caderno, carregador e mais algumas pequenas
+          histórias.</p>
         <p class="price price-large">R$ 189,90</p>
 
         <section aria-labelledby="titulo-detalhes" class="mb-4">
           <h2 id="titulo-detalhes" class="h4">Detalhes</h2>
-          <ul>
-            <li>Compartimento para notebook de até 15 polegadas;</li>
-            <li>Dois bolsos externos;</li>
-            <li>Alças ajustáveis;</li>
-            <li>Material resistente à água.</li>
-          </ul>
+
+          <p id="detalhesProduto"></p>
+
+          <div class="regra-magica">
+            <span class="regra-magica__icone" aria-hidden="true">✨</span>
+            <div>
+              <span class="regra-magica__titulo">Regra da travessura</span>
+              <p id="regraCriativaProduto" class="regra-magica__texto"></p>
+            </div>
+          </div>
         </section>
 
         <form id="formProduto">
           <div class="mb-3">
             <label for="quantidade" class="form-label">Quantidade</label>
-            <input class="form-control quantity-field" id="quantidade" name="quantidade" type="number" min="1" max="10" value="1">
+            <input class="form-control quantity-field" id="quantidade" name="quantidade" type="number" min="1" max="10"
+              value="1">
           </div>
           <button class="btn btn-dark btn-lg" type="submit">Comprar agora</button>
         </form>
@@ -52,15 +60,16 @@
       </div>
     </article>
 
-    <aside class="learning-note mt-5">
-      <h2 class="h5">Nota para investigação</h2>
-      <p class="mb-0">Os links da vitrine carregam um <code>id</code> na URL, mas esta página ainda não usa esse valor. Isso é intencional.</p>
-    </aside>
   </main>
 
-  <footer class="site-footer py-4"><div class="container"><p class="mb-0">Loja Escola · Projeto educacional.</p></div></footer>
+  <footer class="site-footer py-4">
+    <div class="container">
+      <p class="mb-0">Loja Escola · Projeto educacional.</p>
+    </div>
+  </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/product.js"></script>
   <script src="js/header.js"></script>
 </body>
+
 </html>

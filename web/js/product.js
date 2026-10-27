@@ -34,8 +34,11 @@ async function carregarProduto() {
     document.querySelector(".breadcrumb-item.active").textContent =
       produtoAtual.nome;
 
-    document.querySelector(".product-detail-illustration").textContent =
-      produtoAtual.emoji;
+    const imagemProduto = document.querySelector(
+      ".product-detail-illustration"
+    );
+
+    imagemProduto.innerHTML = `<img src="${produtoAtual.imagem}" alt="${produtoAtual.nome}">`;
 
     document.querySelector(".product-detail-illustration").setAttribute(
       "aria-label",
@@ -51,6 +54,13 @@ async function carregarProduto() {
         style: "currency",
         currency: "BRL"
       });
+
+    document.querySelector("#detalhesProduto").textContent =
+      produtoAtual.descricao;
+
+    document.querySelector("#regraCriativaProduto").textContent =
+      produtoAtual.fraseRegra || produtoAtual.regraCriativa;
+
   } catch (erro) {
     console.error("Erro ao carregar produto:", erro);
     feedback.textContent =

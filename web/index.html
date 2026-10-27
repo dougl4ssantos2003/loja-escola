@@ -39,11 +39,37 @@
         <div class="product-filter">
           <label for="filtroProduto" class="form-label">Filtrar produtos</label>
           <input id="filtroProduto" class="form-control" type="search" placeholder="Ex.: caderno" autocomplete="off">
+
+          <label for="filtroCategoria" class="form-label mt-3">
+            Categoria
+          </label>
+          <select id="filtroCategoria" class="form-select">
+            <option value="">Todas as categorias</option>
+          </select>
+
+          <label for="filtroRegra" class="form-label mt-3">
+            Regra criativa
+          </label>
+          <select id="filtroRegra" class="form-select">
+            <option value="">Todas as regras</option>
+          </select>
+
+          <label for="ordenacaoProdutos" class="form-label mt-3">
+            Ordenar por
+          </label>
+          <select id="ordenacaoProdutos" class="form-select">
+            <option value="padrao">Ordem padrão</option>
+            <option value="nome-asc">Nome (A–Z)</option>
+            <option value="nome-desc">Nome (Z–A)</option>
+            <option value="preco-asc">Menor preço</option>
+            <option value="preco-desc">Maior preço</option>
+          </select>
+
         </div>
       </div>
 
       <div class="row g-4" id="listaProdutos">
-       
+
       </div>
       <p id="mensagemFiltro" class="mt-4" role="status" aria-live="polite"></p>
     </section>

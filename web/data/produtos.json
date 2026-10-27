@@ -5,8 +5,9 @@
     "nome": "Feijõezinhos Surpresa do Caos",
     "categoria": "Doces mágicos",
     "preco": 19.90,
-    "emoji": "🍬",
+    "imagem": "images/feijoes.png",
     "regraCriativa": "Cabe no bolso",
+    "fraseRegra": "Pequeno no tamanho, gigante na travessura!",
     "descricao": "Doces imprevisíveis para transformar qualquer momento em uma surpresa mágica."
   },
   {
@@ -14,44 +15,49 @@
     "nome": "Orelhas Extensíveis",
     "categoria": "Invenções mágicas",
     "preco": 39.90,
-    "emoji": "👂",
-    "regraCriativa": "Uso inusitado",
-    "descricao": "Uma invenção divertida para ouvir conversas a distância."
+    "imagem": "images/orelha.png",
+    "regraCriativa": "Usado no espaço",
+    "fraseRegra": "Nem paredes, nem planetas escondem os segredos!",
+    "descricao": "Uma invenção mágica que permite ouvir conversas atrás de portas e paredes. Com um encantamento especial, também funciona dentro de estações espaciais."
   },
   {
     "id": 3,
     "nome": "Pântano Portátil",
     "categoria": "Travessuras",
     "preco": 89.90,
-    "emoji": "🪄",
+    "imagem": "images/pantano.png",
     "regraCriativa": "Não cabe no avião",
-    "descricao": "Uma travessura mágica que transforma qualquer ambiente em um pântano."
+    "fraseRegra": "Melhor não levar no avião!",
+    "descricao": "Uma travessura mágica que transforma qualquer ambiente em um pântano e surpreende quem estiver por perto."
   },
   {
     "id": 4,
     "nome": "Mini-Pufes Mágicos",
     "categoria": "Criaturas mágicas",
     "preco": 49.90,
-    "emoji": "🐾",
+    "imagem": "images/pufes.png",
     "regraCriativa": "Cabe em uma formiga",
-    "descricao": "Criaturinhas encantadas que ficam minúsculas quando recebem um toque de magia."
+    "fraseRegra": "Pequenos até para uma formiga!",
+    "descricao": "Criaturinhas encantadas que ficam minúsculas com um toque de magia e cabem nos lugares mais improváveis."
   },
   {
     "id": 5,
     "nome": "Doces Capilares Instantâneos",
     "categoria": "Doces mágicos",
     "preco": 24.90,
-    "emoji": "🍭",
+    "imagem": "images/docescabeludos.png",
     "regraCriativa": "Uso único",
-    "descricao": "Doces que mudam temporariamente a aparência dos cabelos."
+    "fraseRegra": "Uma mordida, um novo visual!",
+    "descricao": "Doces mágicos que mudam temporariamente a aparência dos cabelos e garantem um visual surpreendente."
   },
   {
     "id": 6,
     "nome": "Zonzo-Zum",
     "categoria": "Travessuras",
     "preco": 34.90,
-    "emoji": "💥",
+    "imagem": "images/zonzozum.png",
     "regraCriativa": "Começa com Z",
-    "descricao": "Uma nuvem mágica de fumaça colorida e confetes para surpreender os amigos."
+    "fraseRegra": "Travessuras de A a Z — começando pelo Z!",
+    "descricao": "Uma invenção que libera uma nuvem mágica de fumaça colorida e confetes para surpreender os amigos."
   }
 ]

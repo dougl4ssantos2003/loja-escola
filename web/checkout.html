@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,9 +9,10 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
   <a class="skip-link" href="#conteudo">Pular para o conteúdo principal</a>
-  
+
   <div id="header-container"></div>
 
   <main id="conteudo" class="container py-5">
@@ -31,7 +33,8 @@
               </div>
               <div class="col-md-5">
                 <label for="telefone" class="form-label">Telefone</label>
-                <input class="form-control" id="telefone" name="telefone" type="tel" autocomplete="tel" placeholder="(11) 99999-9999">
+                <input class="form-control" id="telefone" name="telefone" type="tel" autocomplete="tel"
+                  placeholder="(11) 99999-9999">
               </div>
               <div class="col-12">
                 <label for="email" class="form-label">E-mail</label>
@@ -43,27 +46,31 @@
 
           <fieldset class="mb-5">
             <legend class="h4">Endereço de entrega</legend>
-            <p class="text-secondary">O campo CEP está preparado para uma futura integração com a API ViaCEP.</p>
             <div class="row g-3">
               <div class="col-md-5">
                 <label for="cep" class="form-label">CEP</label>
                 <div class="input-group">
-                  <input class="form-control" id="cep" name="cep" type="text" inputmode="numeric" autocomplete="postal-code" placeholder="00000-000" maxlength="9" aria-describedby="ajudaCep" required>
+                  <input class="form-control" id="cep" name="cep" type="text" inputmode="numeric"
+                    autocomplete="postal-code" placeholder="00000-000" maxlength="9" aria-describedby="ajudaCep"
+                    required>
                   <button class="btn btn-outline-secondary" id="buscarCep" type="button">Buscar CEP</button>
                 </div>
                 <div id="ajudaCep" class="form-text">Digite 8 números. Ex.: 01001-000.</div>
               </div>
               <div class="col-md-7">
                 <label for="logradouro" class="form-label">Endereço</label>
-                <input class="form-control" id="logradouro" name="logradouro" type="text" autocomplete="address-line1" required>
+                <input class="form-control" id="logradouro" name="logradouro" type="text" autocomplete="address-line1"
+                  required>
               </div>
               <div class="col-md-3">
                 <label for="numero" class="form-label">Número</label>
                 <input class="form-control" id="numero" name="numero" type="text" required>
               </div>
               <div class="col-md-9">
-                <label for="complemento" class="form-label">Complemento <span class="text-secondary">(opcional)</span></label>
-                <input class="form-control" id="complemento" name="complemento" type="text" autocomplete="address-line2">
+                <label for="complemento" class="form-label">Complemento <span
+                    class="text-secondary">(opcional)</span></label>
+                <input class="form-control" id="complemento" name="complemento" type="text"
+                  autocomplete="address-line2">
               </div>
               <div class="col-md-5">
                 <label for="bairro" class="form-label">Bairro</label>
@@ -71,11 +78,13 @@
               </div>
               <div class="col-md-5">
                 <label for="cidade" class="form-label">Cidade</label>
-                <input class="form-control" id="cidade" name="cidade" type="text" autocomplete="address-level2" required>
+                <input class="form-control" id="cidade" name="cidade" type="text" autocomplete="address-level2"
+                  required>
               </div>
               <div class="col-md-2">
                 <label for="estado" class="form-label">UF</label>
-                <input class="form-control" id="estado" name="estado" type="text" maxlength="2" autocomplete="address-level1" required>
+                <input class="form-control" id="estado" name="estado" type="text" maxlength="2"
+                  autocomplete="address-level1" required>
               </div>
             </div>
             <div id="cepFeedback" class="mt-3" role="status" aria-live="polite"></div>
@@ -94,7 +103,8 @@
 
           <div class="form-check mb-4">
             <input class="form-check-input" id="termos" name="termos" type="checkbox" required>
-            <label class="form-check-label" for="termos">Confirmo que os dados preenchidos são apenas para esta simulação educacional.</label>
+            <label class="form-check-label" for="termos">Confirmo que os dados preenchidos são apenas para esta
+              simulação educacional.</label>
           </div>
 
           <button class="btn btn-dark btn-lg" type="submit">Concluir compra simulada</button>
@@ -102,21 +112,54 @@
       </section>
 
       <aside class="col-lg-4" aria-labelledby="titulo-resumo">
+
         <div class="summary-box">
-          <h2 id="titulo-resumo" class="h4">Resumo</h2>
-          <div class="d-flex justify-content-between"><span>Mochila Horizonte</span><span>R$ 189,90</span></div>
-          <div class="d-flex justify-content-between mt-2"><span>Frete</span><span>Grátis</span></div>
+          <h2 id="titulo-resumo" class="h4">Resumo da compra</h2>
+
+          <div class="d-flex justify-content-between gap-3">
+            <span id="resumoProduto">Carregando produto...</span>
+            <span id="precoUnitario">—</span>
+          </div>
+
+          <div class="d-flex justify-content-between mt-2">
+            <span>Quantidade</span>
+            <span id="resumoQuantidade">1</span>
+          </div>
+
+          <div class="d-flex justify-content-between mt-2">
+            <span>Subtotal</span>
+            <span id="resumoSubtotal">—</span>
+          </div>
+
+          <div class="d-flex justify-content-between mt-2">
+            <span>Frete</span>
+            <span id="resumoFrete">Grátis</span>
+          </div>
+
           <hr>
-          <div class="d-flex justify-content-between fw-bold"><span>Total</span><span>R$ 189,90</span></div>
-          <p class="small text-secondary mt-3 mb-0">O resumo está fixo de propósito. Torná-lo dinâmico é uma melhoria sugerida.</p>
+
+          <div class="d-flex justify-content-between fw-bold">
+            <span>Total</span>
+            <span id="resumoTotal">—</span>
+          </div>
+
+          <p class="small text-secondary mt-3 mb-0">
+            Compra simulada para fins educacionais.
+          </p>
         </div>
+
       </aside>
     </div>
   </main>
 
-  <footer class="site-footer py-4"><div class="container"><p class="mb-0">Loja Escola · Projeto educacional.</p></div></footer>
+  <footer class="site-footer py-4">
+    <div class="container">
+      <p class="mb-0">Loja Escola · Projeto educacional.</p>
+    </div>
+  </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/checkout.js"></script>
   <script src="js/header.js"></script>
 </body>
+
 </html>

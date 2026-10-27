@@ -331,7 +331,96 @@ body {
     padding: 1rem;
   }
 }
+.product-illustration {
+  min-height: 190px;
+  height: 220px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: #291438;
+}
 
+.product-illustration img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (max-width: 575.98px) {
+  .product-illustration {
+    height: 180px;
+  }
+}
+/* Selo mágico da regra criativa */
+.regra-magica {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-top: 1.5rem;
+  padding: 1rem 1.2rem;
+  background: linear-gradient(135deg, #402052, #291438);
+  border: 1px solid #f6d365;
+  border-left: 5px solid #e87522;
+  border-radius: 10px;
+  box-shadow: 0 5px 16px rgba(41, 20, 56, 0.18);
+}
+
+.regra-magica__icone {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  background: rgba(246, 211, 101, 0.12);
+  border: 1px solid rgba(246, 211, 101, 0.4);
+  border-radius: 50%;
+  font-size: 1.4rem;
+}
+
+.regra-magica__titulo {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: #f6d365;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.regra-magica__texto {
+  margin: 0;
+  color: #fff3e8;
+  font-weight: 600;
+  line-height: 1.5;
+}
+.product-detail-illustration {
+  width: 100%;
+  min-height: 350px;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  background: #291438;
+  border: 2px solid #8d5a24;
+  border-radius: 14px;
+}
+
+.product-detail-illustration img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 350px;
+  object-fit: contain;
+  object-position: center;
+}
+
+@media (max-width: 575.98px) {
+  .product-detail-illustration,
+  .product-detail-illustration img {
+    min-height: 260px;
+  }
+}
 
 /* TODO didático:
    - melhorar estados de hover/focus;
